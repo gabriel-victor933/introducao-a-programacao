@@ -61,7 +61,7 @@ int alguem_ganhou()
 
 }
 
-//função que retorna 1 se a jogada for nova e 0 se a jogada for repetida
+//funÃ§Ã£o que retorna 1 se a jogada for nova e 0 se a jogada for repetida
 int jogada_repetida(int lin,char col)
 {
     int j;
@@ -74,7 +74,7 @@ int jogada_repetida(int lin,char col)
     case 'c': j = 2; break;
     }
 
-    //para a jogada não ser repetida a matriz de controle deve conter 0, caso contrario a jogada já foi realizada
+    //para a jogada nÃ£o ser repetida a matriz de controle deve conter 0, caso contrario a jogada jÃ¡ foi realizada
     if(control[lin][j] == 0)
     {
         return 1;
@@ -86,11 +86,11 @@ int jogada_repetida(int lin,char col)
     }
 }
 
-//função que retorna 1 se a jogada for permitida e 0 se a jogada não for permitida
+//funÃ§Ã£o que retorna 1 se a jogada for permitida e 0 se a jogada nÃ£o for permitida
 int jogada_correta(int lin, char col)
 {
     //para a jogada ser correta o numero da linha e a letra da coluna devem estar no intervalo do tabuleiro do jogo
-    //alem da jogada não poder ser repetida
+    //alem da jogada nÃ£o poder ser repetida
     if(lin >= 1 && lin <= 3 && col >= 'a' && col <= 'c')
     {
         return (jogada_repetida(lin,col));
@@ -105,7 +105,7 @@ int jogada_correta(int lin, char col)
 }
 
 
-//função que modifica o tabuleiro
+//funÃ§Ã£o que modifica o tabuleiro
 void modifica_tab(int lin, char col, int jogadas)
 {
     int j,lc;
@@ -139,7 +139,7 @@ void modifica_tab(int lin, char col, int jogadas)
 }
 
 
-//função que mostra o menu principal
+//funÃ§Ã£o que mostra o menu principal
 void menu_principal()
 {
     printf("\t---JOGA DA VELHA#---\n\n");
@@ -147,7 +147,7 @@ void menu_principal()
 
 }
 
-//função que mostra as inntruções do jogo
+//funÃ§Ã£o que mostra as inntruÃ§Ãµes do jogo
 void instrucoes()
 {
     mostra_jogo();
@@ -205,7 +205,7 @@ int main()
     while(j == 1)
     {
         mostra_jogo();
-        //verifica de quem é a vez;
+        //verifica de quem Ã© a vez;
         if((jogadas%2) != 0)
         {
             printf("\nJOGADOR 1:\n\n");
@@ -220,7 +220,7 @@ int main()
         putchar('\n');
 
 
-        //verificando se a jogada é correta e se for mudar o tabuleiro
+        //verificando se a jogada Ã© correta e se for mudar o tabuleiro
         if(jogada_correta(lin,col))
         {
             //modifica o tabuleiro
@@ -234,7 +234,7 @@ int main()
 
 
 
-        //verificando se há algum vencedor
+        //verificando se hÃ¡ algum vencedor
         ag = alguem_ganhou();
         if(ag == 1)
         {   mostra_jogo();
